@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Добавить";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+
+            <div class="d-grid gap-3">
+
+                <a asp-controller="Editions" asp-action="Create"
+                   class="btn btn-success btn-lg">
+                    Добавить издательство
+                </a>
+
+                <a asp-controller="Authors" asp-action="Create"
+                   class="btn btn-success btn-lg">
+                    Добавить автора
+                </a>
+
+                <a asp-controller="Books" asp-action="Create"
+                   class="btn btn-success btn-lg">
+                    Добавить книгу
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+</div>

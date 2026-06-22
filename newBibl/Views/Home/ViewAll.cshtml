@@ -1,0 +1,39 @@
+﻿@model IEnumerable<newBibl.ViewModels.BookFullViewModel>
+
+<div class="container mt-4">
+    <h2>Список</h2>
+
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>
+                    <a asp-action="ViewAll" asp-route-sortOrder="@ViewData["BookSort"]">
+                        Книга
+                    </a>
+                </th>
+                <th>
+                    <a asp-action="ViewAll" asp-route-sortOrder="@ViewData["AuthorSort"]">
+                        Автор
+                    </a>
+                </th>
+                <th>Издания</th>
+                <th>
+                    <a asp-action="ViewAll" asp-route-sortOrder="@ViewData["PagesSort"]">
+                        Страницы
+                    </a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.BookName</td>
+                    <td>@item.AuthorName</td>
+                    <td>@item.Editions</td>
+                    <td>@item.PageCount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

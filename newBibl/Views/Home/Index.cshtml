@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Главная";
+}
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <div class="row mb-3">
+                <div class="col-6">
+                    <a asp-controller="Home" asp-action="AddMenu"
+                       class="btn btn-success w-100">
+                        Добавить
+                    </a>
+                </div>
+
+                <div class="col-6">
+                    <a asp-controller="Home" asp-action="DeleteMenu"
+                       class="btn btn-danger w-100">
+                        Удалить
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <a asp-controller="Home" asp-action="ViewAll"
+                       class="btn btn-primary w-100">
+                        Просмотреть
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@if (TempData["Success"] != null)
+{
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Успешно!',
+            confirmButtonText: 'OK'
+        });
+    </script>
+}

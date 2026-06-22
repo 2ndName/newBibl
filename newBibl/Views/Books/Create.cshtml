@@ -1,0 +1,43 @@
+@model newBibl.ViewModels.BookCreateViewModel
+
+<h2 class="mb-4">Создать книгу</h2>
+
+<form asp-action="Create" method="post">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control form-control-lg" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="PageCount" class="form-label"></label>
+        <input asp-for="PageCount"
+               type="number"
+               class="form-control"
+               min="1"
+               max="10000" />
+        <span asp-validation-for="PageCount" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Автор</label>
+        <select asp-for="AuthorId" class="form-select">
+            <option value="">-- Выберите автора --</option>
+            @foreach (var author in Model.Authors)
+            {
+                <option value="@author.Id">
+                    @author.Name
+                </option>
+            }
+        </select>
+        <span asp-validation-for="AuthorId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success btn-lg">
+        Создать
+    </button>
+
+</form>
